@@ -211,13 +211,6 @@ body {
 
 
 
-
-
-
-
-
-
-
 /* Banner */
 .banner {
     display: flex;
@@ -323,14 +316,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
 /* Programas Académicos */
 .programas {
     padding: 40px 20px;
@@ -340,11 +325,11 @@ body {
 /* Estilo para el título de la sección "Cursos de Especialización" */
 .programas h2 {
     font-family: 'Roboto', sans-serif; /* Usa una fuente moderna */
-    font-size: 3rem; /* Tamaño de fuente grande */
+    font-size: 5vw; /* El tamaño de la fuente se ajusta al 5% del ancho de la ventana */
     font-weight: bold;
     color: #333; /* Usamos un color gris oscuro para el texto principal */
     text-transform: uppercase; /* Convierte el texto en mayúsculas */
-    letter-spacing: 5px; /* Espaciado entre letras */
+    letter-spacing: 2px; /* Espaciado entre letras */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
     margin-bottom: 10px; /* Reducimos el espacio debajo del título */
     position: relative;
@@ -361,6 +346,33 @@ body {
     background-color: #f93737; /* Un rojo más suave para el subrayado */
     border-radius: 5px; /* Bordes redondeados para el subrayado */
 }
+
+/* Ajustes específicos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .programas h2 {
+        font-size: 6vw; /* El tamaño de la fuente se ajusta aún más para pantallas más pequeñas */
+        letter-spacing: 3px; /* Ajustamos el espaciado entre las letras para mejor visualización */
+    }
+
+    .programas h2::after {
+        height: 3px; /* Reducimos el grosor del subrayado en pantallas pequeñas */
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+    .programas h2 {
+        font-size: 7vw; /* El tamaño de la fuente se ajusta aún más */
+        letter-spacing: 4px; /* Ajuste adicional para pantallas pequeñas */
+    }
+
+    .programas h2::after {
+        height: 2px; /* Reducimos aún más el grosor del subrayado */
+    }
+}
+
+
+
 
 .cards {
     display: grid;
@@ -520,6 +532,7 @@ body, html {
     overflow-x: hidden; /* Evita el desplazamiento horizontal */
 }
 
+
 /* Sección de contacto */
 #contactanos {
     position: relative;
@@ -550,9 +563,6 @@ body, html {
 }
 
 
-
-
-/* baner azul */
 
 /* Contenedor principal de la galería */
 .imagenes-cursos {
@@ -612,6 +622,7 @@ body, html {
 }
 
 
+
 /* Estilo para la imagen de contacto */
 .imagen-contacto {
     width: 100%; /* Ajustar la imagen al 100% del contenedor */
@@ -620,7 +631,6 @@ body, html {
 }
 
 /* Estilo para el contenedor debajo de la imagen */
-
 .contenedor-debajo-imagen {
     background-color: #00796b; /* Fondo azul suave profundo */
     padding: 82px 20px; /* Añadir espacio dentro del contenedor */
@@ -647,12 +657,51 @@ body, html {
     font-size: 1.8rem; /* Tamaño de fuente mayor para destacar aún más */
 }
 
-/* Estilo para el formulario de inscripción */
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    /* Reducción de la altura máxima de la imagen */
+    .imagen-contacto {
+        max-height: 50vh; /* Usar un porcentaje de la altura de la ventana */
+    }
 
+    /* Ajustar el padding del contenedor */
+    .contenedor-debajo-imagen {
+        padding: 60px 15px; /* Reducir espacio interior */
+    }
 
+    /* Ajustar el tamaño de los párrafos */
+    .contenedor-debajo-imagen p {
+        font-size: 1.2rem; /* Reducir el tamaño de fuente */
+    }
 
+    /* Ajustar el tamaño de las etiquetas <strong> */
+    .contenedor-debajo-imagen strong {
+        font-size: 1.4rem; /* Reducir el tamaño de fuente */
+    }
+}
 
+/* Ajustes para pantallas más pequeñas (móviles) */
+@media (max-width: 480px) {
+    /* Reducción de la altura máxima de la imagen */
+    .imagen-contacto {
+        max-height: 40vh; /* Hacer la imagen más pequeña */
+    }
 
+    /* Ajustar el padding del contenedor */
+    .contenedor-debajo-imagen {
+        padding: 50px 10px; /* Reducir el espacio interior aún más */
+    }
+
+    /* Ajustar el tamaño de los párrafos */
+    .contenedor-debajo-imagen p {
+        font-size: 1rem; /* Asegurar que el texto no sea demasiado grande */
+    }
+
+    /* Ajustar el tamaño de las etiquetas <strong> */
+    .contenedor-debajo-imagen strong {
+        font-size: 1.2rem; /* Hacer el texto destacado más pequeño */
+    }
+}
 
 
 
@@ -661,95 +710,176 @@ body, html {
 
 /* Sección principal del formulario */
 #inscribete {
-    /* Fondo con un gradiente suave entre colores */
     background: #0e6292;
-    padding: 40px; /* Espaciado interior alrededor del formulario */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra alrededor del formulario */
-    width: 100%; /* Ocupa todo el ancho disponible */
-    max-width: 1265px; /* Limita el ancho máximo a 750px */
-    margin: auto; /* Centra el formulario en la página */
-    text-align: center; /* Centra el texto dentro del formulario */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 1265px;
+    margin: auto;
+    text-align: center;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
 }
 
 /* Estilos del título */
 h2 {
-    font-family: 'Arial', sans-serif; /* Fuente del título */
-    color: #ffffff; /* Color blanco para el texto */
-    margin-bottom: 20px; /* Espaciado debajo del título */
-    font-size: 28px; /* Tamaño de fuente */
-    text-transform: uppercase; /* Convierte el texto a mayúsculas */
-    letter-spacing: 2px; /* Espaciado entre letras */
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* Estilos del formulario */
 .inscripcion-form {
-    /* Flexbox para organizar los elementos del formulario en columnas */
     display: flex;
-    flex-direction: column; /* Coloca los elementos en una columna */
-    gap: 20px; /* Espaciado entre los elementos */
-    align-items: center; /* Centra los elementos horizontalmente */
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
 }
 
 /* Agrupamos nombre y apellido en una sola fila */
 .form-group-nombre-apellido {
-    display: flex; /* Flexbox para la alineación horizontal */
-    justify-content: space-between; /* Distribuye los elementos a lo largo de la línea */
-    gap: 20px; /* Espaciado entre los elementos */
-    width: 80%; /* Establece el ancho del contenedor */
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 80%;
 }
 
 /* Agrupamos correo y teléfono en una sola fila */
 .form-group-correo-telefono {
-    display: flex; /* Flexbox para la alineación horizontal */
-    justify-content: space-between; /* Distribuye los elementos a lo largo de la línea */
-    gap: 20px; /* Espaciado entre los elementos */
-    width: 80%; /* Establece el ancho del contenedor */
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 80%;
 }
 
 /* Estilos de los grupos de campo */
 .form-group {
-    /* Flexbox para la disposición vertical de los elementos dentro de cada campo */
     display: flex;
-    flex-direction: column; /* Organiza los elementos en una columna */
-    width: 80%; /* Establece el ancho de los elementos */
+    flex-direction: column;
+    width: 80%;
 }
 
 /* Estilos de las etiquetas */
 label {
-    color: #fff; /* Color blanco para las etiquetas */
-    margin-bottom: 8px; /* Espaciado debajo de la etiqueta */
-    font-size: 14px; /* Tamaño de la fuente */
-    font-weight: 500; /* Peso de la fuente (semi-negrita) */
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 /* Estilos para los inputs, textarea y select */
 input, textarea, select {
-    padding: 12px; /* Espaciado dentro de los campos de entrada */
-    border-radius: 8px; /* Bordes redondeados */
-    border: 2px solid #ddd; /* Borde gris claro */
-    font-size: 14px; /* Tamaño de fuente */
-    color: #333; /* Color del texto dentro de los campos */
-    background-color: #fff; /* Color de fondo blanco */
-    transition: all 0.3s ease-in-out; /* Transición suave para el cambio de estilo */
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+    width: 100%; /* Asegura que los campos no se estiren más allá de su contenedor */
 }
 
 /* Efecto de enfoque para los inputs, textarea y select */
 input:focus, textarea:focus, select:focus {
-    border-color: #5c6bc0; /* Cambia el color del borde al hacer clic en el campo */
-    outline: none; /* Elimina el borde adicional de enfoque */
+    border-color: #5c6bc0;
+    outline: none;
 }
 
 /* Estilos para los placeholders */
 input::placeholder, textarea::placeholder {
-    color: #888; /* Color gris para los textos de los placeholders */
+    color: #888;
 }
 
 /* Estilos específicos para el textarea */
 textarea {
-    height: 100px; /* Establece la altura del textarea */
-    resize: none; /* Desactiva la capacidad de redimensionar */
+    height: 100px;
+    resize: none;
 }
+
+/* Ajustes para pantallas pequeñas (tablets y dispositivos pequeños) */
+@media (max-width: 1024px) {
+    /* Reducción del tamaño de los inputs, textarea y select */
+    input, textarea, select {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    /* Ajustar el padding de la sección principal */
+    #inscribete {
+        padding: 30px 20px;
+    }
+
+    /* Título más pequeño en pantallas pequeñas */
+    h2 {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+
+    /* Agrupar nombre y apellido en pantallas pequeñas */
+    .form-group-nombre-apellido, .form-group-correo-telefono {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    /* Reducir el tamaño de los grupos de campo */
+    .form-group {
+        width: 100%;
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+    /* Ajuste más estrecho para el formulario */
+    #inscribete {
+        padding: 20px 15px;
+        margin: 0 10px; /* Asegura que haya margen en el lado derecho */
+    }
+
+    /* Título más pequeño */
+    h2 {
+        font-size: 20px;
+    }
+
+    /* Ajustes para los campos de formulario */
+    input, textarea, select {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    /* Ajustar el tamaño de los grupos de campos */
+    .form-group-nombre-apellido, .form-group-correo-telefono {
+        gap: 10px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+}
+
+/* Para pantallas grandes (laptops y escritorios), aseguramos que todo se vea bien */
+@media (min-width: 1025px) {
+    #inscribete {
+        padding: 40px;
+        margin: 30px auto;
+    }
+
+    .form-group-nombre-apellido, .form-group-correo-telefono {
+        flex-direction: row;
+        gap: 20px;
+        width: 80%;
+    }
+}
+
+
+
+
+
+
 
 /* Estilos para el botón */
 button {
@@ -823,3 +953,4 @@ button:active {
 .link-blanco:hover {
     color: rgb(43, 194, 231); /* No cambia de color al pasar el ratón */
 }
+
